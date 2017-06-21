@@ -1,0 +1,134 @@
+body {
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+}
+
+#app {
+    height: 100%;
+    widows: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #F5F5F5
+}
+
+.side-panel {
+    background-color: #2B579A;
+    box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.side-panel>.brand {
+    padding: 15px;
+}
+
+.side-panel>.brand>.brand-logo {
+    font-size: 20px;
+    color: white;
+}
+
+.horizon-stack {
+    display: flex;
+}
+
+.horizon-stack>* {
+    flex-grow: 1;
+}
+
+.action-button-list {
+    margin: 20px 15px;
+    flex-shrink: 0;
+}
+
+.action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    outline: none;
+    transition: all 0.2s;
+    color: white;
+}
+
+.action-button:hover {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.action-button:active {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.action-button>img {
+    height: 28px;
+    width: 28px;
+    margin-bottom: 10px;
+}
+
+.side-panel>.title {
+    margin: 5px 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.task-list-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-y: auto;
+}
+
+.task-list-item {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.task-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.task-list-item:active {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.task-list-item>.title {
+    color: white;
+}
+
+.task-progress {
+    color: red;
+    border: none;
+    outline: none;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    margin: 5px 0px;
+}
+
+.task-progress::-webkit-progress-bar {
+    background-color: transparent;
+}
+
+.task-progress::-webkit-progress-value {
+    background-color: white;
+}
+
+.task-list-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+.task-list-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+}
