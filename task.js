@@ -1,17 +1,33 @@
 const ForgeSDK = require('forge-apis');
 
-module.exports = function() {
-    var api = new ForgeSDK.BucketsApi();
-    api.createBucket()
-}
-
-
 /**
  * @module asdfasdf
  * 
- * @param asdfsadfsdaf
+ * @param option
  */
 
-module.exports = function() {
+module.exports = class Task {
+    constructor(option) {
+        this._credentials = option.credentials;
+
+
+
+        //任务名称
+        this.name = option.filename;
+        //文件路径
+        this.filename = option.filename;
+        //forge token
+        this.token = "";
+        //forge urn
+        this.urn = "";
+        this.bucketname = "";
+    }
+
+    run() {
+
+    }
+
+
+
 
 }

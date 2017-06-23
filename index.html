@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="assets/bootstrap.css">
     <link rel="stylesheet" href="assets/index.css">
 
 
@@ -9,6 +8,18 @@
 
 <body>
     <div id="app">
+        <div class="modal" v-show="false">
+            <div class="header">
+                创建新任务
+            </div>
+            <label for="">
+            <input type="checkbox">使用现有Token
+            <input type="checkbox">指定Bucket名称
+            <input type="checkbox">使用现有Bucket
+            
+
+
+        </div>
         <div class="side-panel">
             <div class="brand" style="-webkit-app-region: drag">
                 <div class="brand-logo">Autodesk <b>Forge Viewer</b></div>
@@ -125,8 +136,97 @@
                 </div>
             </div>
         </div>
-        <div class="task-info">
+        <div class="main-frame" v-show="advanceMode">
+            <div class="header">
+                <div class="control-box">
+                    <button @click="min"><img src="assets/min.svg"></button>
+                    <button @click="max"><img src="assets/max.svg"></button>
+                    <button @click="close"><img src="assets/close.svg"></button>
+                </div>
+                <div class="title-bar">
+                    <div class="title">哈哈哈哈哈.rvt</div>
+                    <div class="info">当前状态：正在上传</div>
+                    <progress class="main-progress" max="100" value="20"></progress>
+                </div>
+            </div>
+            <div class="status-list-container">
+                <div class="status-list">
+                    <div class="status-list-item">
+                        <div class="icon">
+                            <img src="assets/status-auth.svg">
+                        </div>
+                        <div class="main">
+                            <div class="title">
+                                <span class="tag">1/5</span> 身份验证
+                            </div>
+                            <div class="content">
+                                <div class="status-item">
+                                    正在获取Token...
+                                </div>
+                                <div class="status-item">
+                                    ...
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-list-item">
+                        <div class="icon">
+                            <img src="assets/status-bucket.svg">
+                        </div>
+                        <div class="main">
+                            <div class="title">
+                                <span class="tag">2/5</span> 创建Bucket
+                            </div>
+                            <div class="content">
+                                Bucket名称：sadfasdf
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-list-item">
+                        <div class="icon">
+                            <img src="assets/status-upload.svg">
+                        </div>
+                        <div class="main">
+                            <div class="title">
+                                <span class="tag gray">3/5</span> 上传模型文件
+                            </div>
+                            <div class="content">
+                                Bucket名称：sadfasdf
+                                <progress class="main-progress" max="100" value="20"></progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-list-item">
+                        <div class="icon">
+                            <img src="assets/status-trans.svg">
+                        </div>
+                        <div class="main">
+                            <div class="title">
+                                <span class="tag gray">4/5</span> 格式转换
+                            </div>
+                            <div class="content">
+                                Bucket名称：sadfasdf
+                                <progress class="main-progress" max="100" value="20"></progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-list-item">
+                        <div class="icon">
+                            <img src="assets/status-download.svg">
+                        </div>
+                        <div class="main">
+                            <div class="title">
+                                <span class="tag gray">5/5</span> 下载模型
+                            </div>
+                            <div class="content">
+                                Bucket名称：sadfasdf
+                                <progress class="main-progress" max="100" value="20"></progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
