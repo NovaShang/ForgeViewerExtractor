@@ -20,15 +20,22 @@
 
 
         </div>
-        <div class="side-panel">
+        <div v-bind:class="[advanceMode?'side-panel-advance':'side-panel-normal','side-panel']">
             <div class="brand" style="-webkit-app-region: drag">
-                <div class="brand-logo">Autodesk <b>Forge Viewer</b></div>
-                <div class="brand-description">批量转换、下载与浏览工具<br/>by Nova</div>
+                <div class="control-box" v-show="!advanceMode">
+                    <button @click="min"><img src="assets/min-inv.svg"></button>
+                    <button @click="close"><img src="assets/close-inv.svg"></button>
+                </div>
+                <div class="brand-logo"> <b>Reforger</b><span class="text">by Nova</span></div>
             </div>
             <div class="horizon-stack action-button-list">
                 <button class="action-button"><img src="assets/trans.svg">转换模型</button>
                 <button class="action-button"><img src="assets/browse.svg">浏览模型</button>
                 <button class="action-button"><img src="assets/setting.svg">配置设置</button>
+                <button class="action-button" v-show="!advanceMode" @click="setAdvanceMode(true)"><img src="assets/advance.svg">高级模式</button>
+                <button class="action-button action-button-lite" v-show="advanceMode" @click="setAdvanceMode(false)"><img src="assets/left.svg"></button>
+
+
             </div>
             <div class="title">任务列表</div>
             <div class="task-list-container">
