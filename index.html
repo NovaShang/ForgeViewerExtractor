@@ -8,17 +8,17 @@
 
 <body>
     <div id="app">
-        <div class="modal" v-show="false">
+        <div class="modal" v-show="addTask">
             <div class="header">
                 创建新任务
             </div>
-            <label for="">
-            <input type="checkbox">使用现有Token
-            <input type="checkbox">指定Bucket名称
-            <input type="checkbox">使用现有Bucket
-            
+            <label for="upload-file">选择模型</label>
+            <input id="upload-file" type="file" class="upload-button">
+            <label for="download-file">离线化模型</label>
+            <input id="download-file" type="checkbox" class="checkbox">
 
-
+            <button>确定</button>
+            <button>取消</button>
         </div>
         <div v-bind:class="[advanceMode?'side-panel-advance':'side-panel-normal','side-panel']">
             <div class="brand" style="-webkit-app-region: drag">
@@ -29,7 +29,7 @@
                 <div class="brand-logo"> <b>Reforger</b><span class="text">by Nova</span></div>
             </div>
             <div class="horizon-stack action-button-list">
-                <button class="action-button"><img src="assets/trans.svg">转换模型</button>
+                <button class="action-button" @click="addTask=true"><img src="assets/trans.svg">转换模型</button>
                 <button class="action-button"><img src="assets/browse.svg">浏览模型</button>
                 <button class="action-button"><img src="assets/setting.svg">配置设置</button>
                 <button class="action-button" v-show="!advanceMode" @click="setAdvanceMode(true)"><img src="assets/advance.svg">高级模式</button>
@@ -37,7 +37,7 @@
 
 
             </div>
-            <div class="title">任务列表</div>
+            <div class="header"><span class="title">任务列表</span><button class="active">全部</button><button>正在下载</button><button>已完成</button></div>
             <div class="task-list-container">
                 <div class="task-list">
                     <div class="task-list-item">
@@ -144,7 +144,7 @@
             </div>
         </div>
         <div class="main-frame" v-show="advanceMode">
-            <div class="header">
+            <div class="window-header">
                 <div class="control-box">
                     <button @click="min"><img src="assets/min.svg"></button>
                     <button @click="max"><img src="assets/max.svg"></button>

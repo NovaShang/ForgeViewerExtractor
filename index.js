@@ -6,7 +6,8 @@ const app = new Vue({
     data: {
         taskQueue: [],
         currentTask: {},
-        advanceMode: false
+        advanceMode: false,
+        addTask: false
     },
     created: function() {
         this.setAdvanceMode(false)
@@ -45,7 +46,10 @@ const app = new Vue({
         close: function() {
             currentWindow.close();
 
-        }
+        },
+        showAddTask: function() {
+            electron.ipcRenderer.send('showAddTask');
+        },
 
     }
 })
