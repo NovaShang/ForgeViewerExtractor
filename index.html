@@ -12,13 +12,20 @@
             <div class="header">
                 创建新任务
             </div>
-            <label for="upload-file">选择模型</label>
-            <input id="upload-file" type="file" class="upload-button">
-            <label for="download-file">离线化模型</label>
-            <input id="download-file" type="checkbox" class="checkbox">
-
-            <button>确定</button>
-            <button>取消</button>
+            <div class="content">
+                <div class="input-group">
+                    <label for="upload-file">选择模型</label>
+                    <input id="upload-file" type="file" class="upload-button">
+                </div>
+                <div class="input-group">
+                    <label for="download-file">离线化模型</label>
+                    <input id="download-file" type="checkbox" class="checkbox">
+                </div>
+            </div>
+            <div class="footer">
+                <button class="button button-green">确定</button>
+                <button class="button" @click="addTask=false">取消</button>
+            </div>
         </div>
         <div v-bind:class="[advanceMode?'side-panel-advance':'side-panel-normal','side-panel']">
             <div class="brand" style="-webkit-app-region: drag">
@@ -239,7 +246,6 @@
 
 
 </body>
-<script src="index.js">
-</script>
+<script src="index.js"></script>
 
 </html>

@@ -2,6 +2,7 @@ body {
     font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei";
     margin: 0px;
     border: 1px solid #1379BE;
+    font-size: 14px;
 }
 
 input,
@@ -335,14 +336,78 @@ button {
     right: 0px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    background-color: #EEE;
+    box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(47, 87, 154, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.modal>.header {
+    color: #333;
+    padding: 10px;
+    background-color: #DDD;
+}
+
+.modal>.content {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal>.footer {
+    border-top: 1px solid #DDD;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .upload-file::-webkit-file-upload-button {}
 
 .textbox {}
 
-.button {}
+.button {
+    background-color: transparent;
+    outline: none;
+    border: solid 1px #1379BE;
+    padding: 4px 15px;
+    margin: 3px;
+    border-radius: 3px;
+    color: #1379BE;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    background-color: #1379BE;
+    color: white;
+}
+
+.button-green {
+    border-color: #2B9DAA;
+    color: #2B9DAA;
+}
+
+.button-green:hover {
+    background-color: #2B9DAA;
+}
+
+.input-group {
+    border-bottom: solid 2px #666;
+    transition: all 0.2s;
+    margin: 10px 20px;
+}
+
+.input-group>label {
+    font-size: 14px;
+    color: #444;
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.input-group:hover {
+    border-bottom: solid 2px #1379BE;
+}

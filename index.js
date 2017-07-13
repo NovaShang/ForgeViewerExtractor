@@ -23,8 +23,8 @@ const app = new Vue({
 
             } else {
                 currentWindow.unmaximize();
-                currentWindow.setMinimumSize(500, 400);
-                currentWindow.setMaximumSize(500, 99999);
+                currentWindow.setMinimumSize(420, 400);
+                currentWindow.setMaximumSize(420, 99999);
                 currentWindow.setSize(500, currentSize[1]);
             }
             this.advanceMode = value;
